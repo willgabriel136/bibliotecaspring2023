@@ -5,10 +5,13 @@
     <head>
         <meta charset="UTF-8" />
         <title>Livros</title>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
+        <div class="container">
         <h1>Livros</h1>
-        <table>
+        <a href="/livro/insert" class="btn"
+        <table class="table">
             <tr>
                 <th>Id</th>
                 <th>Titulo</th>
