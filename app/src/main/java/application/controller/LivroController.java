@@ -41,13 +41,24 @@ public class LivroController {
         return "redirect:/livro/list";
     }
     @RequestMapping("/update")
-    public String update(Model model, @RequestParam("id") int id, @RequestParam("titulo") String titulo){
+    public String update(Model model,
+     @RequestParam("id") int id){
         Optional<Livro> livro = livroRepo.findById(id);
         if(livro.isPresent()){
-            model.addAttribute("livro", livro.get());
+           model.addAttribute("livro", livro.get());
             return "/livro/update";
     }
     return "redirect:/livro/list";
 
+
 }
+@RequestMapping("/delete")
+public String update(Model model, @RequestParam("id") int id){
+    Optional<Livro> livro = livroRepo.findById(id);
+    if(livro.isPresent()){
+       model.addAttribute("livro", livro.get());
+        return "/livro/delete";
+
+}
+return "redirect:/livro/list";
 }
